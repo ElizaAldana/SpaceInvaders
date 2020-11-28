@@ -33,24 +33,25 @@ public void Eject() {
 	
 	switch (s) {
 	case 0:
-		app.background(255);
-		app.fill(0);
-		app.textSize(50);
-		app.text("SpaceInvaders",20,100);
+		app.background(0);
+		app.fill(0,0,255);
+		app.textSize(30);
+		app.text("SpaceInvaders",200,100);
 		app.textSize(40);
 		if(app.mouseX > app.width/2-40 && app.mouseX <= app.width/2+45 && app.mouseY > app.height-250 && app.mouseY <= app.height-200) {
-			app.fill(255,0,0);
+			
 		}
+		app.fill(255);
 		app.text("Start",app.width/2-40, app.height-200);
-		app.fill(0);
+		app.fill(255);
 		if(app.mouseX > app.width/2-40 && app.mouseX <= app.width/2+40 && app.mouseY > app.height-150 && app.mouseY <= app.height-100) {
-			app.fill(255,0,0);
+			
 		}
 		app.text("Exit",app.width/2-40,app.height-100);
 		
 		break;
 	case 1:
-		app.background(52);
+		app.background(0);
 		nave.draw();
 		edge=false;
 		regresarse=false;
@@ -70,7 +71,8 @@ public void Eject() {
 			}
 		}
 		if(regresarse) {
-			//s = 2;  //validar perder
+			s = 2;//validar perder
+			app.text("perdiste", 100, 100);
 		}
 	}
 }
