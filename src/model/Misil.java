@@ -4,16 +4,16 @@ import processing.core.PApplet;
 
 public class Misil {
 
-	//falta el borrar aun no lo hago
 	private int posX, posY, radio;
 	private PApplet app;
+	private boolean borrar;
 	
 	public Misil(PApplet app, int posX, int posY) {
 		this.posX = posX;
 		this.posY = posY;
 		this.radio = 8;
 		this.app = app;
-		
+		this.borrar = false;
 	}
 	
 	public void draw() {
@@ -26,6 +26,14 @@ public class Misil {
 		this.posY = posY -5;
 	}
 
+	
+	public boolean isborrar() {
+		return borrar;
+	}
+
+	public void setborrar(boolean borrar) {
+		this.borrar = borrar;
+	}
 	
 	//Getters & Setters
 	public int getPosX() {

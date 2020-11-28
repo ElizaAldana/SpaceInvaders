@@ -5,8 +5,8 @@ import processing.core.PApplet;
 
 public class Main extends PApplet{
 	
-	Control controller;
-
+	Pantallas s;
+	Control control;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,12 +18,21 @@ public class Main extends PApplet{
 	}
 	
 	public void setup() {
-		this.controller = new Control(this);
-
+		s = new Pantallas(this);
+		this.control = new Control(this);
 	}
 	
 	public void draw() {
 		background(0);
+		this.control.Eject();
+	}
+	
+	public void mouseClicked() {
+		this.control.mouseClicked();
+	}
+	
+	public void keyPressed() {
+		this.control.keyPressed();
 	}
 
 }

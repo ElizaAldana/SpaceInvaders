@@ -12,4 +12,17 @@ public class Control {
 		this.app = app;
 		this.logic = new Logic(app);
 	}
+	
+	public void Eject() {
+		this.logic.Eject();
+	}
+	
+	public void mouseClicked() {
+		this.logic.mouseClicked();
+	}
+	
+	public void keyPressed() {
+		this.logic.keyPressed();
+	}
+	
 }

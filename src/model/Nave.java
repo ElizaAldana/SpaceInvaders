@@ -4,28 +4,33 @@ import processing.core.PApplet;
 
 public class Nave implements Runnable{
 
-	//La nave tiene dirección y posición
+	//La nave tiene dirección solo en x, y posición
 	private int posX, posY, dirX;
 	private PApplet app;
 	
 	public Nave(PApplet app) {
 		this.posX = 600/2;
-		this.posY = 350;
+		this.posY = 550;
 		this.dirX = 0;
 		this.app = app;
 	}
 	
 	public void draw() {
 		this.app.fill(127,255,212);
-		this.app.triangle(posX, posY, posX, posY, 40, 40);
+		this.app.triangle(posX-10, posY, posX, posY-30, posX+10, posY);
 	}
 	
-	public void mover() {
+	
+	public void moveR() {
 		this.posX += posX+dirX*4; 
+	}
+	public void moveL() {
+		this.posX += posX+dirX*-4; 
 	}
 	
 	public void run() {
-		mover();
+		moveL();
+		moveR();
 		try {
 			Thread.sleep(10);
 		} catch (InterruptedException e) {
