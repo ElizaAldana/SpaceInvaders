@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Nave {
+public class Nave implements Runnable{
 
 	//La nave tiene dirección y posición
 	private int posX, posY, dirX;
@@ -15,16 +15,23 @@ public class Nave {
 		this.app = app;
 	}
 	
-	public void drawN() {
+	public void draw() {
 		this.app.fill(127,255,212);
-		this.app.triangle(posX, posY, posX, posY, 60, 60);
+		this.app.triangle(posX, posY, posX, posY, 40, 40);
 	}
 	
 	public void mover() {
-		
+		this.posX += posX+dirX*4; 
 	}
 	
-	
+	public void run() {
+		mover();
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	//Getters & setters
 	public int getPosX() {
